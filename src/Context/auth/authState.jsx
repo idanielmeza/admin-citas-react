@@ -31,6 +31,7 @@ const AuthState = props => {
             tokenAuth(token);
 
         } catch (error) {
+            alert('No se pudo iniciar sesion, intentalo de nuevo');
             console.log(error);
         }
 

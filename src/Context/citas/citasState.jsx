@@ -25,7 +25,7 @@ const CitasState = props => {
                 payload: citas
             });
         } catch (error) {
-            console.log(error);
+            console.log(error.response);
         }
         
 
@@ -66,7 +66,7 @@ const CitasState = props => {
             return cita;
 
         } catch (error) {
-            console.log(error);
+            console.log(error.response);
         }
 
 
@@ -77,10 +77,13 @@ const CitasState = props => {
 
         try {
             await clienteAxios.post('/citas', cita);
+
+            alert('Se ha creado la cita correctamente');
+
             obtenerCitas();
 
         } catch (error) {
-            console.log(error);
+            console.log(error.response);
         }
 
     }
@@ -91,10 +94,14 @@ const CitasState = props => {
         try {
             await clienteAxios.delete(`/citas/${id}`);
 
-            dispatch({
-                type: 'ELIMINAR_CITA',
-                payload: id
-            });
+            // dispatch({
+            //     type: 'ELIMINAR_CITA',
+            //     payload: id
+            // });
+
+            obtenerCitas();
+
+            alert('Se ha eliminado la cita correctamente');
 
         } catch (error) {
             console.log(error);
@@ -107,13 +114,15 @@ const CitasState = props => {
     const actualizarCita = async cita => {
 
         try {
-            const respuesta = await clienteAxios.put(`/citas/${cita.id}`, cita);
+            const respuesta = await clienteAxios.put(`/citas/${cita._id}`, cita);
             // const citaNueva = respuesta.data;
 
             // dispatch({
             //     type: 'ACTUALIZAR_CITA',
             //     payload: citaNueva
             // });
+
+            alert('Se ha actualizado la cita correctamente');
 
             obtenerCitas();
 

@@ -9,8 +9,8 @@ const Card = ({cita}) => {
     const navigate = useNavigate();
 
     const onClick = async() => {
-        await obtenerCita(cita.id);
-        navigate(`/cita/${cita.id}`);
+        await obtenerCita(cita._id);
+        navigate(`/cita/${cita._id}`);
     }
 
     

@@ -31,7 +31,7 @@ const Citas = () => {
                 citas.map(cita=>{
                     return(
                         <Card
-                            key={cita.id}
+                            key={cita._id}
                             cita={cita}
                         />
                     )

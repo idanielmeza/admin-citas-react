@@ -25,11 +25,6 @@ const Cita = () => {
     const handleSubmit = e => {
             e.preventDefault();
 
-            setCita({
-                ...cita,
-                fecha: new Date(cita.fecha).toLocaleDateString()
-            })
-
             actualizarCita(cita);
             navigate('/');
     }
@@ -54,6 +49,7 @@ const Cita = () => {
                     <input type="text" name='nombre' className="form-control"
                         value={cita.nombre}
                         onChange={handleChange}
+                        required={true}
                     />
                 </div>
                 <div className="col-md-6">
@@ -61,6 +57,7 @@ const Cita = () => {
                     <input type="number" className="form-control" name='numero'
                         value={cita.numero}
                         onChange={handleChange}
+                        required={true}
                     />
                 </div>
                 <div className="col-md-6">
@@ -68,6 +65,7 @@ const Cita = () => {
                     <input type="number" name='numero2' className="form-control"
                         value={cita.numero2}
                         onChange={handleChange}
+
                     />
                 </div>
                 <div className="col-md-6">
@@ -83,6 +81,7 @@ const Cita = () => {
                     <input type="date" name='fecha' className="form-control" 
                         value={`${cita.fecha}`.substring(0,10)}
                         onChange={handleChange}
+                        required={true}
                     />
                 </div>
                 <div className="col-md-6">
@@ -90,6 +89,7 @@ const Cita = () => {
                     <input type="time" className="form-control" name='hora'
                         value={cita.hora}
                         onChange={handleChange}
+                        required={true}
                     />
                 </div>
                 <div className="">
@@ -97,6 +97,7 @@ const Cita = () => {
                     <input type="text" className="form-control" name='hospital'
                         value={cita.hospital}
                         onChange={handleChange}
+                        required={true}
                     />
                 </div>
 
@@ -113,7 +114,7 @@ const Cita = () => {
                     <button type="submit" className="btn btn-primary">Guardar</button>
                     <button type='button' className="btn btn-danger mx-2"
                         onClick={() => {
-                            eliminarCita(cita.id);
+                            eliminarCita(cita._id);
                             navigate('/');
                         }}
                     >Eliminar</button>

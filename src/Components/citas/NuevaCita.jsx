@@ -43,6 +43,7 @@ const NuevaCita = () => {
                     <input type="text" name='nombre' className="form-control"
                         
                         onChange={handleChange}
+                        required
                     />
                 </div>
                 <div className="col-md-6">
@@ -50,6 +51,7 @@ const NuevaCita = () => {
                     <input type="number" className="form-control" name='numero'
                         
                         onChange={handleChange}
+                        required
                     />
                 </div>
                 <div className="col-md-6">
@@ -71,13 +73,14 @@ const NuevaCita = () => {
                     <label className="form-label">Fecha</label>
                     <input type="date" name='fecha' className="form-control" 
                         onChange={handleChange}
+                        required
                         // value={ cita ? new Date(cita.fecha).toISOString().substring(0,10) : ''}
                     />
                 </div>
                 <div className="col-md-6">
                     <label className="form-label">Hora</label>
                     <input type="time" className="form-control" name='hora'
-                        
+                        required
                         onChange={handleChange}
                     />
                 </div>
@@ -85,6 +88,7 @@ const NuevaCita = () => {
                     <label className="form-label">Hospital</label>
                     <input type="text" className="form-control" name='hospital'
                         onChange={handleChange}
+                        required
                     />
                 </div>
 

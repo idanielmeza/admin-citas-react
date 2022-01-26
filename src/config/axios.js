@@ -2,8 +2,8 @@ import axios from 'axios';
 
 export const clienteAxios = axios.create({
     // baseURL: process.env.REACT_APP_BACKEND_URL || window.location.href
-    // baseURL: window.location.href
-    baseURL: 'http://158.101.7.166:5000'
+    baseURL: window.location.origin
+    // baseURL: 'http://localhost:5000'
 });
 
 export const tokenAuth = token => {
